@@ -11,6 +11,8 @@ import { AuthModule } from './Modules/auth/auth.module';
 import { UserModule } from './Modules/user/user.module';
 import { CommonModule } from './common/common.module';
 import { AppService } from './app.service';
+import { RolesModule } from './modules/roles/roles.module';
+import { PermissionModule } from './modules/permission/permission.module';
 @Module({
   imports: [
     // * globally configuration get enviornment variable
@@ -42,7 +44,9 @@ import { AppService } from './app.service';
     UserModule,
     // HelperModule,
     // * common module configure common service to call every file
-    CommonModule
+    CommonModule,
+    RolesModule,
+    PermissionModule
   ],
   controllers: [AppController],
   providers: [AppService],

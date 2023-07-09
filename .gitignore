@@ -45,3 +45,4 @@ lerna-debug.log*
 # Upload Files 
 src/Uploads/*
 !src/Uploads/.gitkeep
+commands.txt
