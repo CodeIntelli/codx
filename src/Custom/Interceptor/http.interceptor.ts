@@ -6,6 +6,7 @@ import * as CryptoJS from 'crypto-js'
 
 
 @Injectable()
+// interceptor work like a middleware
 export class HttpInterceptor implements NestInterceptor {
   constructor() { }
   key = process.env.ENC_DEC_KEY;

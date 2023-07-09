@@ -4,10 +4,6 @@ export interface UserInterface extends Document {
     name: string;
     email: string;
     password: string;
-    avatar?: {
-        public_id?: string;
-        url?: string;
-    };
     role?: string;
     isActive?: boolean;
     createdAt?: Date;

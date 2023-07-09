@@ -1,5 +1,7 @@
-require('dotenv').config({ path: `./config.${process.env.NODE_ENV}.env` })
+require('dotenv').config({ path: `./config.dev.env` })
 
+
+// [ + ] all config variable from .env
 export default () => ({
     DB_URL: process.env.DB_URL,
     DEBUG_MODE: process.env.DEBUG_MODE,

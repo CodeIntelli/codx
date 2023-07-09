@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { ServicesService } from './services/services.service';
 import { ResponseHandlerService } from './services/responseHandler.service';
 import { AwsService } from './services/aws.service';
 import { MailService } from './services/mail.service';
 import { JwtAuthService } from './services/jwt.service';
 import { OtpgeneratorService } from './services/otpgenerator.service';
+import { PasswordService } from './services/password.service';
 import { ApifeatureService } from './services/apifeature.service';
 import { EncdecService } from './services/encdec.service';
 import { JwtModule } from '@nestjs/jwt';
@@ -19,12 +19,12 @@ import { ContextService } from './services/context.service';
     }),
   ],
   providers: [
-    ServicesService,
     ResponseHandlerService,
     AwsService,
     MailService,
     JwtAuthService,
     OtpgeneratorService,
+    PasswordService,
     ApifeatureService,
     EncdecService,
     FirebaseService,
@@ -32,12 +32,12 @@ import { ContextService } from './services/context.service';
 
   ],
   exports: [
-    ServicesService,
     ResponseHandlerService,
     AwsService,
     MailService,
     JwtAuthService,
     OtpgeneratorService,
+    PasswordService,
     ApifeatureService,
     EncdecService,
     FirebaseService

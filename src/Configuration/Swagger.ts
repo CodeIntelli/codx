@@ -3,6 +3,7 @@ import { DocumentBuilder, OpenAPIObject, SwaggerModule } from '@nestjs/swagger'
 
 import { SWAGGER_CONFIG } from './Swagger.config'
 
+// [ > ] manage structure to display in the browser
 export function createDocument(app: INestApplication): OpenAPIObject {
     const builder = new DocumentBuilder()
         .setDescription(SWAGGER_CONFIG.description)

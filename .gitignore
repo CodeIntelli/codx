@@ -42,11 +42,6 @@ lerna-debug.log*
 *-lock.json
 *.lock
 
-
-# 
-pushNotification.json
-
-
 # Upload Files 
 src/Uploads/*
 !src/Uploads/.gitkeep

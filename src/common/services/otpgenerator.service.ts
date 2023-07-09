@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import otpGenerator from "otp-generator";
 @Injectable()
 export class OtpgeneratorService {
+    // [ . ]generate otp
     public async GenerateOTP(length: number, config: any) {
         const otpConfig = {
             digits: true,

@@ -7,13 +7,14 @@ export class ResponseHandlerService {
         private readonly enc: EncdecService,
         private readonly msg: ContextService,
     ) { }
+
+    // [ > ] send success response for return api
     public async sendSuccessResponse(res: any, data: any, method?: string, message?: string) {
-        debugger;
         // decrypt and encrypt data is here
         // let newData = await JSON.stringify(data);
         // data = await JSON.stringify(data);
         // data = await this.enc.doEncryptResponse(newData);
-        debugger;
+
         switch (method.toLowerCase()) {
             case 'get':
                 return res.status(HttpStatus.OK).json({ success: true, data, message: message ? `🤩 ${message}` : this.msg.getDataSuccess });
@@ -48,6 +49,7 @@ export class ResponseHandlerService {
         }
     }
 
+    // [ > ]send Error response for return api
     public async sendErrorResponse(res: any, err: any, errType: any, errMessage?: any) {
         if (errType.toLowerCase() === "internal server error") {
             res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ success: false, data: [], message: process.env.DEBUG_MODE ? err.message : errMessage || '😞 Internal Server Error' });

@@ -2,10 +2,8 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class ContextService {
-    // Success Message
-    public userNotFound = "User Not Found"
+    // * Success Message
     public userExist = 'User Already Exist'
-    public invalidCred = "Invalid Credentials"
     public getDataSuccess = "🤩 Data Retrieved Successfully"
     public postDataSuccess = "'🤩 Data Added Successfully'"
     public editDataSuccess = "🤩 Data edited Successfully"
@@ -16,6 +14,10 @@ export class ContextService {
     public loginSuccess = "🥳 Login Successfully"
     public registerSuccess = "🥳 User Registered Successfully"
 
-    // Error Message
+    // ! Error Message
     public somethingWentwrong = "😞 Something Went Wrong"
+    public userNotFound = "User Not Found"
+    public invalidCred = "Invalid Credentials"
+    public invalidEmail = "Invalid Email"
+    public resetPasswordTokenNotMatch = "Reset password token doesn't match"
 }

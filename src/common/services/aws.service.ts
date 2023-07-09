@@ -9,7 +9,6 @@ export class AwsService {
     uploadFile(folderName: string, folderPath: string, file: any) {
         const s3 = new S3();
         let uploadParams;
-        console.log(">>>>>>>>>>>>>>>>>>>>", process.env.AWS_BUCKET)
         if (folderPath) {
             uploadParams = {
                 Bucket: process.env.AWS_BUCKET + `/${folderName}/${folderPath}`,
@@ -22,7 +21,6 @@ export class AwsService {
     }
 
     // @Service: Read File In Bucket
-
     async getFile(fileKey: string) {
         const s3 = new S3();
         const downloadParmas = {

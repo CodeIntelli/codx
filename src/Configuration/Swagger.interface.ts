@@ -1,3 +1,4 @@
+// [ > ] interface for swagger file
 export interface SwaggerConfig {
     title: string
     description: string

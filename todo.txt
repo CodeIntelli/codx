@@ -1,11 +1,1 @@
-[ + ] Complete Task
-[ - ] Remaining Task
-[ . ] On Progress Task
-
-
-Example:- 
-
-@Date:- Your Task Date
-[ + ] AWS Image Uploading
-[ - ] Swagger Integration
-[ . ] JWT Authentication
+postman collection : https://documenter.getpostman.com/view/24199550/2s93m61hFU

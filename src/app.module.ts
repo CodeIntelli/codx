@@ -13,8 +13,10 @@ import { CommonModule } from './common/common.module';
 import { AppService } from './app.service';
 @Module({
   imports: [
+    // * globally configuration get enviornment variable
     ConfigModule.forRoot({ isGlobal: true, load: [Configuration] }),
 
+    // * mail credentials and configure
     MailerModule.forRoot({
       transport: {
         host: process.env.SMTP_HOST,
@@ -28,14 +30,18 @@ import { AppService } from './app.service';
         },
       },
       template: {
-        dir: join(__dirname, 'templates'),
-        adapter: new HandlebarsAdapter()
+        dir: join(__dirname, 'Templates'),
+        adapter: new HandlebarsAdapter(),
       }
     }),
+    // * database configuration
     DatabaseModule,
+    // * auth module provide jwt service
     AuthModule,
+    // * all user fucntion call from user module
     UserModule,
     // HelperModule,
+    // * common module configure common service to call every file
     CommonModule
   ],
   controllers: [AppController],

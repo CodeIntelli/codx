@@ -5,6 +5,7 @@ import { Injectable } from '@nestjs/common';
 export class MailService {
     constructor(private mailService: MailerService) { }
 
+    // [ . ]send deactivate mail 
     public async sendDeactivateMail(to: string, contextUsername: string) {
         let mailObj = {
             to: to,
@@ -19,6 +20,7 @@ export class MailService {
         return { message: `Mail Send Successfully to ${to}` };
     }
 
+    // [ . ]send login email
     public async sendLoginMail(to: string, contextUsername: string, loginIPAddress: string, loginLocation: string, time: string, secureUrl: string) {
         let mailObj = {
             to: to,
@@ -37,8 +39,12 @@ export class MailService {
         return { message: `Mail Send Successfully to ${to}` };
     }
 
-
-    public async resetPasswordEmail(to: string, username: string, contextUserid: string, contextUsermail: string, loginIPAddress: string, loginLocation: string, time: string, contextUserpasswordUrl: string) {
+    // [ . ]send resetpassword email
+    public async resetPasswordEmail(to: string, username: string,
+        // contextUserid: string,
+        // contextUsermail: string,
+        // loginIPAddress: string, loginLocation: string,
+        time: number, contextUserpasswordUrl: string) {
         let mailObj = {
             to: to,
             from: process.env.SMTP_MAIL,
@@ -46,19 +52,19 @@ export class MailService {
             template: "resetPassword",
             context: {
                 username: username,
-                useremail: contextUsermail,
-                userId: contextUserid,
+                useremail: to,
+                // userId: contextUserid,
                 url: contextUserpasswordUrl,
-                UserIP: loginIPAddress,
-                userLocation: loginLocation,
+                // UserIP: loginIPAddress,
+                // userLocation: loginLocation,
                 time: time,
             }
         }
         await this.mailService.sendMail(mailObj);
-        return { message: `Mail Send Successfully to ${to}` };
+        return { message: `Reset Password Link Send Successfully to ${to}` };
     }
 
-
+    // [ . ]send verification email
     public async verifyMail(to: string, contextUsername: string, secureUrl: string) {
         let mailObj = {
             to: to,
@@ -75,6 +81,7 @@ export class MailService {
     }
 
 
+    // [ . ]send welcome email
     public async welcomeMail(to: string, contextUsername: string) {
         let mailObj = {
             to: to,

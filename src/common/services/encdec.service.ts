@@ -5,6 +5,8 @@ export class EncdecService {
     constructor() { }
     key = process.env.ENC_DEC_KEY;
     iv1 = process.env.IV1;
+
+    // ~ request body data convert into the encrypt format
     async doEncryptResponse(payload) {
         const encrypted = await CryptoJS.AES.encrypt(JSON.stringify(payload), this.key, {
             keySize: 16,
@@ -15,6 +17,7 @@ export class EncdecService {
         return encrypted.toString()
     }
 
+    // ~ request body data convert into the decrypt format
     async doDecryptRequest(encryptedData) {
         const plainText1 = await CryptoJS.AES.decrypt(encryptedData, this.key, {
             keySize: 16,

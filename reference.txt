@@ -1,0 +1,8 @@
+validation input from request nestjs
+https://betterprogramming.pub/validating-complex-requests-with-nestjs-a-practical-example-b55c287f7c99\
+
+
+exception filter
+https://stackoverflow.com/questions/60270468/throw-same-error-format-as-class-validator-in-nestjs
+
+https://www.linkedin.com/pulse/nestjs-request-data-validation-nestor-iv%C3%A1n-scoles
