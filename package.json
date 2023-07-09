@@ -9,7 +9,7 @@
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "NODE_ENV=dev nest start --watch",
+    "start": "rmdir /s /q dist && NODE_ENV=dev nest start --watch",
     "start:dev": "NODE_ENV=dev nest start --watch",
     "start:stg": "NODE_ENV=mock nest start --watch",
     "start:prod": "NODE_ENV=prod nest start --watch",

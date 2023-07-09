@@ -34,13 +34,13 @@ export class registerUserDtos {
     @IsString()
     @IsNotEmpty()
     @MaxLength(15)
-    @MinLength(4)
+    @MinLength(3)
     firstname: string;
 
     @IsString()
     @IsNotEmpty()
     @MaxLength(40)
-    @MinLength(5)
+    @MinLength(3)
     lastname: string;
 
     @IsString()
@@ -63,7 +63,7 @@ export class registerUserDtos {
         isArray: true,
         example: [Roles.ADMIN, Roles.USER],
     })
-    role: Roles[];
+    role?: Roles[];
 };
 
 export class CheckMongoID {

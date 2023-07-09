@@ -30,8 +30,8 @@ import { AppService } from './app.service';
         },
       },
       template: {
-        dir: join(__dirname, 'Templates'),
-        adapter: new HandlebarsAdapter(),
+        dir: join(__dirname, '../templates'),
+        adapter: new HandlebarsAdapter()
       }
     }),
     // * database configuration

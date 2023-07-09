@@ -55,10 +55,11 @@ export class UserService {
         const payload = { email: storedData.email }
         let token = await this.jwtService.generateJwtToken(payload)
         let url = `localhost:2030/verify-email/?token=${token}`
-        /* if (storedData) {
-            await this.mailService.verifyMail(storedData.email, storedData.firstname, url)
-            storedData.isVerified = true;
-        } */
+        // if (storedData) {
+        //     let data = await this.mailService.verifyMail(storedData.email, storedData.firstname, url)
+        //     console.log("🤩 ~ file: user.service.ts:60 ~ UserService ~ registerUser ~ data:", data)
+        //     storedData.isVerified = true;
+        // }
         // [ . ] send conformation mailto user end
 
         return storedData;

@@ -76,6 +76,7 @@ export class MailService {
                 url: secureUrl || ""
             }
         }
+
         await this.mailService.sendMail(mailObj);
         return { message: `Mail Send Successfully to ${to}` };
     }
