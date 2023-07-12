@@ -17,7 +17,7 @@ export class ResponseHandlerService {
 
         switch (method.toLowerCase()) {
             case 'get':
-                return res.status(HttpStatus.OK).json({ success: true, data, message: message ? `🤩 ${message}` : this.msg.getDataSuccess });
+                return res.status(HttpStatus.OK).json({code:HttpStatus.OK, success: true, data, message: message ? `🤩 ${message}` : this.msg.getDataSuccess });
                 break;
             case 'post':
                 return res.status(HttpStatus.CREATED).json({ success: true, data, message: message ? `🤩 ${message}` : this.msg.postDataSuccess });
