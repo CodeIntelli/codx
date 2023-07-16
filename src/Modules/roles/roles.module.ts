@@ -4,8 +4,8 @@ import { RolesService } from './services/roles.service';
 import { ContextService } from 'src/common/services/context.service';
 import { CommonModule } from 'src/common/common.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { RolesSchema } from 'src/Models/roles.schema';
-import { PermissionSchema } from 'src/Models/permission.schema';
+import RolesSchema from 'src/Models/roles.schema';
+import PermissionSchema from 'src/Models/permission.schema';
 
 
 
